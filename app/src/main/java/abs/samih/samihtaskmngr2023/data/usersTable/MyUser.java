@@ -9,27 +9,21 @@ import androidx.room.PrimaryKey;
 @Entity
 public class MyUser {
     @PrimaryKey(autoGenerate = true)
-    public int uid;
-    @ColumnInfo(name = "first_name")
-    public String firstName;
-    //@ColumnInfo(name = "last_name")
-    public String lastName;
-
-    public MyUser(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    @Ignore
-    public MyUser(int uid) {
-        this.uid = uid;
-    }
+    public long keyid;
+    @ColumnInfo(name = "fullName")
+    public String fullName;
+    public String email;
+    public String phone;
+    public String passw;
 
     @Override
     public String toString() {
         return "MyUser{" +
-                "uid=" + uid +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "keyid=" + keyid +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", passw='" + passw + '\'' +
                 '}';
     }
 }

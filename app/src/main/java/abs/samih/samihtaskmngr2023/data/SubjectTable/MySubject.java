@@ -1,37 +1,22 @@
 package abs.samih.samihtaskmngr2023.data.SubjectTable;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 //1
-@Entity
+@Entity(primaryKeys = {"keyid" ,"title"})
 public class MySubject {
-    @PrimaryKey(autoGenerate = true)
-    public int uid;
 
+    public long keyid;
+    @NonNull
     public String title;
-
-    public MySubject(String title) {
-        this.title = title;
-    }
-@Ignore
-    public MySubject(int uid) {
-        this.uid = uid;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     @Override
     public String toString() {
         return "MySubject{" +
-                "uid=" + uid +
+                "uid=" + keyid +
                 ", title='" + title + '\'' +
                 '}';
     }

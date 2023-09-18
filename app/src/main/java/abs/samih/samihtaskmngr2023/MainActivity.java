@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db =AppDatabase.getDB(getApplicationContext());
 
         MyUserDoa myUserDao = db.getMyUserDao();
-        myUserDao.insert(new MyUser("kk1","HH1"));
+        myUserDao.insertAll(new MyUser());
         List<MyUser> users = myUserDao.getAll();
         for (MyUser myUser : users) {
             Log.d("koko",myUser.toString());

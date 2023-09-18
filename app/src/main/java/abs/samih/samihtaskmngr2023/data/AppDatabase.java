@@ -8,20 +8,20 @@ import androidx.room.RoomDatabase;
 
 
 import abs.samih.samihtaskmngr2023.data.MyTasksTable.MyTask;
-import abs.samih.samihtaskmngr2023.data.MyTasksTable.MyTaskDoa;
+import abs.samih.samihtaskmngr2023.data.MyTasksTable.MyTaskQuery;
 import abs.samih.samihtaskmngr2023.data.SubjectTable.MySubject;
-import abs.samih.samihtaskmngr2023.data.SubjectTable.MySubjectDoa;
+import abs.samih.samihtaskmngr2023.data.SubjectTable.MySubjectQuery;
 import abs.samih.samihtaskmngr2023.data.usersTable.MyUser;
 import abs.samih.samihtaskmngr2023.data.usersTable.MyUserDoa;
 
 //3
-@Database(entities = {MyUser.class, MySubject.class, MyTask.class},version = 4)
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class},version = 5)
 public abstract class AppDatabase extends RoomDatabase
 {
     private static AppDatabase db;
     public abstract MyUserDoa getMyUserDao();
-    public abstract MySubjectDoa getMySubjectDoa();
-    public abstract MyTaskDoa getMyTaskDoa();
+    public abstract MySubjectQuery getMySubjectDoa();
+    public abstract MyTaskQuery getMyTaskDoa();
 
     public static AppDatabase getDB(Context context)
     {
