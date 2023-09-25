@@ -12,12 +12,13 @@ import java.util.List;
 public interface MyTaskQuery {
     @Query("SELECT * FROM MyTask")
     List<MyTask> getAll();
-
+    @Query("SELECT * FROM MyTask WHERE userkeyId =:myUserkeyId  ORDER BY importance DESC")
+    List<MyTask> getAllByImportance(int myUserkeyId);
     @Query("SELECT * FROM MyTask WHERE keyid IN (:userIds)")
     List<MyTask> loadAllByIds(int[] userIds);
 
-    @Query("SELECT * FROM MyTask WHERE keyid =:mykeyid AND text LIKE '%'||:toFind||'%'")
-    List<MyTask> searchText(String toFind, int mykeyid);
+    @Query("SELECT * FROM MyTask WHERE userkeyId =:myUserkeyId AND text LIKE '%'||:toFind||'%'")
+    List<MyTask> searchText(String toFind, int myUserkeyId);
 
     @Insert
     void insertAll(MyTask... users);

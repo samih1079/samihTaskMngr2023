@@ -12,7 +12,7 @@ public class MyTask {
     public long subjkeyId;
     public long userkeyId;
 
-    public long dateTime;
+    public long time;
     public int importance;
     public String text;
     public boolean isCompleted;
@@ -23,7 +23,7 @@ public class MyTask {
                 "keyid=" + keyid +
                 ", subjkeyId=" + subjkeyId +
                 ", userkeyId=" + userkeyId +
-                ", dateTime=" + dateTime +
+                ", dateTime=" + time +
                 ", importance=" + importance +
                 ", text='" + text + '\'' +
                 ", isCompleted=" + isCompleted +

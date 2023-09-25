@@ -8,19 +8,16 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import abs.samih.samihtaskmngr2023.data.MyTasksTable.MyTask;
-
 //2
 @Dao
-public interface MyUserDoa {
+public interface MyUserQuery {
     @Query("SELECT * FROM MyUser")
     List<MyUser> getAll();
 
     @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
     List<MyUser> loadAllByIds(int[] userIds);
 
-    @Query("SELECT * FROM MyUser WHERE email = :myEmail AND " +
-            "passw = :myPassw LIMIT 1")
+    @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
     MyUser checkEmailPassw(String myEmail, String myPassw);
 
     @Insert
@@ -29,7 +26,7 @@ public interface MyUserDoa {
     @Delete
     void delete(MyUser user);
 
-    @Query("Delete From MySubject WHERE keyid=:id ")
+    @Query("Delete From MyUser WHERE keyid=:id ")
     void delete(int id);
 
     @Insert
